@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    {% apply inline_css(source('@email_css/email.css')) %}
+        <h1>Bienvenue {{ username }}</h1>
+        <p>Vous pouvez dès à présent poser vos questiuons sur wonder</p>
+        <a href="{{ url('login') }}">Me connecter</a>
+    {% endapply %}
+</body>
+</html>

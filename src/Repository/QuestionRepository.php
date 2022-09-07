@@ -21,6 +21,17 @@ class QuestionRepository extends ServiceEntityRepository
         parent::__construct($registry, Question::class);
     }
 
+    public function findBySearch(string $query)
+    {
+        return $this->createQueryBuilder('q')
+                        ->select('q.title, q.id')
+                        ->where('q.title LIKE :search')
+                        ->setParameter('search', "%{$query}%")
+                        ->getQuery()
+                        ->getResult();
+
+    }
+
     public function add(Question $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);

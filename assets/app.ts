@@ -1,4 +1,4 @@
-import 'assets/scripts/searchBar'
+import './searchBar'
 /*
  * Welcome to your app's main JavaScript file!
  *
